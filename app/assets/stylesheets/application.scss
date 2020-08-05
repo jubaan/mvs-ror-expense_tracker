@@ -13,4 +13,23 @@
  *= require_tree .
  *= require_self
  */
+$enable-gradients: true;
+$enable-shadows: true;
+$enable-rounded: true;
+$enable-transitions: true;
+// $gradient: map-merge(
+//   (
+//     chill:
+//     warm: linear-gradient(135deg, #f2cd48 0%, #fd803f 100%),
+//     hot: linear-gradient(135deg, #f9445a 0%, #fd803f 100%),
+//     cold: linear-gradient(135deg, #8019c6 0%, #2f93cc 100%)
+//   ),
+//   $gradient
+// );
+$primary: night-fade-gradient;
+
 @import 'bootstrap';
+
+.full_height {
+  height: 100vh;
+}
