@@ -1,4 +1,4 @@
-class GroupsController < ApplicationController
+class ExpensesController < ApplicationController
   before_action :set_expense, only: %i[show edit update destroy]
 
   def index
