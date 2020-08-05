@@ -1,2 +1,12 @@
-%h1 Users#show
+- provide(:title, current_user.name.capitalize)
+%h1
+  Hi,
+  = current_user.name.capitalize
+%p
+  Total spent:
+  - hello = current_user.expenses.all.map do |expense|
+    = expense.amount
+
+
 %p Find me in app/views/users/show.html.haml
+= current_user.name

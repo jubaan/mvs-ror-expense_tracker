@@ -3,29 +3,12 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no", :name => "viewport"}
-    %title Capstone
+    %title= full_title(yield(:title))
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = bootstrap_js
   %body.container-fluid.mh-100
-    .row
-      %nav.col.w-100.navbar.navbar-expand-lg.navbar-light.bg-light
-        %a.navbar-brand{:href => "#"} Navbar
-        %button.navbar-toggler{"aria-controls" => "navbarNav", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNav", "data-toggle" => "collapse", :type => "button"}
-          %span.navbar-toggler-icon
-        #navbarNav.collapse.navbar-collapse
-          %ul.navbar-nav
-            %li.nav-item.active
-              %a.nav-link{:href => "#"}
-                Home
-                %span.sr-only (current)
-            %li.nav-item
-              %a.nav-link{:href => "#"} Features
-            %li.nav-item
-              %a.nav-link{:href => "#"} Pricing
-            %li.nav-item
-              %a.nav-link.disabled{"aria-disabled" => "true", :href => "#", :tabindex => "-1"} Disabled
+    = show_navbar_if_user_login
     -# %p.notice= notice
     -# %p.alert= alert
     = yield
