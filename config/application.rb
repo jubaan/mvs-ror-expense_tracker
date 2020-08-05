@@ -22,5 +22,7 @@ module Capstone
     config.generators.system_tests = nil
 
     config.factory_bot.definition_file_paths = %w[custom/factories]
+
+config.assets.paths << Rails.root.join("app", "assets", "fonts")
   end
 end
