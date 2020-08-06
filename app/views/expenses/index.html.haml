@@ -1,9 +1,11 @@
 - provide(:title, 'Expenses')
 = link_to 'Add new expense', new_expense_path
-.col.p-3.px-0
-  - @expenses.all.each do |e|
-    .card.mb-3.shadow-sm
-      .card-body
-        = e.name
-        = e.amount
-        = e.created_at.year
+.row
+  .col.py-3
+    .overflow.overflow-auto
+      - @expenses.all.each do |e|
+        %li.card.mb-3.shadow-sm
+          .card-body
+            = e.name
+            = e.amount
+            = e.created_at.year

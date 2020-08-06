@@ -1,20 +1,19 @@
-.row
-  %nav.col.navbar.navbar-dark.bg-primary.p-3
-    .navbar-nav.d-flex.flex-row.w-100
-      .col.nav-item
-        = link_to destroy_user_session_path, method: :delete, class: 'nav-link' do
-          %i.fas.fa-door-open
-      .col-6.navbar-brand.mx-auto.flex-grow-1.text-center.overflow-hidden= page_title(yield(:title))
-      .col.nav-item.flex-grow-1.text-right= show_menu_toggler_if_user_login
-    #navbarNav.collapse.navbar-collapse
-      %ul.navbar-nav.p-3
-        %li.nav-item.active
-          = link_to_if user_signed_in?, 'Dashboard', user_path(current_user), class: 'nav-link'
-        %li.nav-item.active
-          = link_to_if user_signed_in?, 'Settings', destroy_user_session_path, method: :delete, class: 'nav-link'
-        %li.nav-item.active
-          = link_to 'Expenses', expenses_path, class: 'nav-link'
-        %li.nav-item.active
-          = link_to 'Groups', groups_path, class: 'nav-link'
-        %li.nav-item.active
-          = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link'
+%nav.row.navbar.navbar-dark.bg-primary.px-4.py-3.sticky-top
+  .navbar-nav.d-flex.flex-row.w-100
+    .col.nav-item.active.text-left.p-0.m-0
+      = link_to destroy_user_session_path, method: :delete, class: 'nav-link' do
+        %i.fas.fa-door-open
+    .col-6.navbar-brand.mx-auto.text-center.overflow-hidden= page_title(yield(:title))
+    .col.nav-item.active.text-right.p-0.m-0= show_menu_toggler_if_user_login
+  #navbarNav.collapse.navbar-collapse
+    %ul.navbar-nav.p-3
+      -# %li.nav-item.active
+        -# = link_to_if user_signed_in?, 'Dashboard', user_path(current_user), class: 'nav-link'
+      -# %li.nav-item.active
+        = link_to_if user_signed_in?, 'Settings', destroy_user_session_path, method: :delete, class: 'nav-link'
+      %li.nav-item.active
+        = link_to 'Expenses', expenses_path, class: 'nav-link'
+      %li.nav-item.active
+        = link_to 'Groups', groups_path, class: 'nav-link'
+      %li.nav-item.active
+        = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link'

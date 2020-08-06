@@ -9,7 +9,7 @@ $enable-transitions: true;
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap');
 
 body {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
 }
@@ -17,7 +17,6 @@ body {
 .bg-color {
   background: #eaedee;
   background: linear-gradient(to top, #fdfbfb, #eaedee);
-  // background: red;
 }
 
 .bg-navbar {
@@ -31,4 +30,9 @@ body {
 .font-bold {
   font-family: 'lato', sans-serif;
   font-weight: 700;
+}
+
+.overflow {
+  max-height: 70%;
+  height: 100%;
 }
