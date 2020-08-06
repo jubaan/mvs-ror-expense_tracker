@@ -6,7 +6,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @title = 'Profile'
+    @user = User.find(params[:id])
+    unless current_user == @user
+      flash[:notice] = 'Access restricted!'
+      redirect_to user_path(current_user)
+    end
   end
 
   def new
