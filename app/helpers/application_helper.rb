@@ -19,7 +19,12 @@ module ApplicationHelper
 
   def show_navbar_unless_root_path
     path = request.path
-    render 'layouts/navbar' if path != '/'
+    if path == '/sign_in' || path == '/sign_up'
+      render 'layouts/log-navbar'
+    elsif path == '/'
+    else
+      render 'layouts/navbar'
+    end
   end
 
   def show_menu_toggler_if_user_login
