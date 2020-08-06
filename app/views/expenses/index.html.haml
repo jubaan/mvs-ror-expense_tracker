@@ -3,7 +3,7 @@
 .row
   .col.py-3
     .overflow
-      - @expenses.all.ordered_by_most_recent.each do |e|
+      - current_user.expenses.ordered_by_most_recent.each do |e|
         %li.card.mb-3.shadow-sm
           .card-body
             = e.name
