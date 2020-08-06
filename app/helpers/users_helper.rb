@@ -5,6 +5,6 @@ module UsersHelper
 
   def user_name
     name = current_user.name.downcase.capitalize
-    name.length > 10 ? "Welcome" : "Hi, #{name}!"
+    name.length > 7 ? "Welcome" : "Hi, #{name}!"
   end
 end
