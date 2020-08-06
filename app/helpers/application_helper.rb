@@ -25,4 +25,8 @@ module ApplicationHelper
   def show_menu_toggler_if_user_login
     render 'layouts/menu_toggler' if user_signed_in?
   end
+
+  def redirect_back_or_default(default)
+    redirect_to(session[:return_to] || default)
+  end
 end

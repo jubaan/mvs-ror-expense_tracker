@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   root 'pages#welcome'
 
   get '/settings', to: 'pages#settings'
+  get '/dashboard', to: 'pages#dashboard'
 end

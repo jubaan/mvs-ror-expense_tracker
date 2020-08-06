@@ -14,10 +14,12 @@ class ExpensesController < ApplicationController
   def edit; end
 
   def create
-    @expense = expense.new(expense_params)
+
+    @expense = current_user.expenses.new(expense_params)
+    # @expense = Expense.new(name: params[:name], amount: params[:amount], group_id:params[:group_id], author_id: current_user)
 
     if @expense.save
-      redirect_to @expense, notice: 'Expense was successfully created.'
+      redirect_to expenses_path, notice: 'Expense was successfully created.'
     else
       render :new
     end
@@ -38,11 +40,11 @@ class ExpensesController < ApplicationController
 
   private
 
-  def set_group
+  def set_expense
     @expense = Expense.find(params[:id])
   end
 
   def expense_params
-    params.fetch(:expense, {})
+    params.require(:expense).permit(:name, :amount, :group_id)
   end
 end

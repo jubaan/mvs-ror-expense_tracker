@@ -1,8 +1,10 @@
 class PagesController < ApplicationController
   def welcome
-    @title = 'Welcome'
   end
 
   def settings
+  end
+
+  def dashboard
   end
 end

@@ -1,2 +1,10 @@
-%h1 Expenses#new
-%p Find me in app/views/expenses/new.html.haml
+-provide(:title, 'New Expense')
+.col.py-3.px-0
+  = simple_form_for(@expense) do |f|
+    = f.error_notification
+    .form-inputs
+      = f.input :name
+      = f.input :amount, as: :float
+      = f.input :group_id, collection: Group.all
+    .form-actions
+      = f.button :submit, "Sign up", class: 'btn btn-primary btn-lg w-100'

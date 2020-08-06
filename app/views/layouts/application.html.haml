@@ -8,9 +8,8 @@
     = csp_meta_tag
     %link{rel: "stylesheet", href: "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", integrity: "sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin: "anonymous"}
     = bootstrap_js
-  %body.container-fluid
-    = show_navbar_unless_root_path
-    .row.h-100.bg-color
+  %body.container-fluid.bg-color
+    .row.d-flex.flex-column.h-100
+      = show_navbar_unless_root_path
       .col.bg-color
         = yield
-        %i.fas.fa-caret-left

@@ -1,2 +1,9 @@
-%h1 Expenses#index
-%p Find me in app/views/expenses/index.html.haml
+- provide(:title, 'Expenses')
+= link_to 'Add new expense', new_expense_path
+.col.p-3.px-0
+  - @expenses.all.each do |e|
+    .card.mb-3.shadow-sm
+      .card-body
+        = e.name
+        = e.amount
+        = e.created_at.year

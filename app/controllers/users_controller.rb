@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @title = "Welcome back #{@user.name.capitalize}"
+    @title = 'Profile'
   end
 
   def new
