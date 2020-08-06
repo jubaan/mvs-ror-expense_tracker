@@ -1,15 +1,24 @@
 .row
-  %nav.col.w-100.navbar.navbar-expand-lg.navbar-light.bg-light
-    %a.navbar-brand{:href => "#"} Snapscan
-    %button.navbar-toggler{"aria-controls" => "navbarNav", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNav", "data-toggle" => "collapse", :type => "button"}
-      %span.navbar-toggler-icon
+  %nav.col.navbar.navbar-dark.bg-primary.p-3
+    .navbar-nav.d-flex.flex-row.w-100
+      .nav-item
+        = link_to 'Go back', root_path, class: 'nav-link'
+      .navbar-brand.mx-auto= page_title(yield(:title))
+      .nav-item= show_menu_toggler_if_user_login
+    -# %ul.navbar-nav.d-flex.flex-row.w-100.justify-content-between
+    -#   %li.nav-item.active
+        = link_to page_title(yield(:title)), root_path, class: 'nav-link font-bold'
+      %li.nav-item.active
+        = link_to page_title(yield(:title)), root_path, class: 'nav-link font-bold'
+      %li.nav-item.active.d-none
+    = show_menu_toggler_if_user_login
     #navbarNav.collapse.navbar-collapse
       %ul.navbar-nav
         %li.nav-item.active
-          = link_to 'Dashboard', user_path(current_user), class: 'nav-link'
-        %li.nav-item
+          -# = link_to_if user_signed_in?, 'Dashboard', user_path(current_user), class: 'nav-link'
+        %li.nav-item.active
+          = link_to 'Profile', destroy_user_session_path, method: :delete, class: 'nav-link'
+        %li.nav-item.active
+          = link_to 'Expenses', destroy_user_session_path, method: :delete, class: 'nav-link'
+        %li.nav-item.active
           = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link'
-        %li.nav-item
-          %a.nav-link{:href => "#"} Pricing
-        %li.nav-item
-          %a.nav-link.disabled{"aria-disabled" => "true", :href => "#", :tabindex => "-1"} Disabled

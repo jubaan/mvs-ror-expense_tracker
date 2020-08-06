@@ -1,6 +1,6 @@
+-provide(:title, 'Log In')
 .row
-  .col.p-4
-    %h2 Log in
+  .col.p-3
     = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .form-inputs
         = f.input :email,

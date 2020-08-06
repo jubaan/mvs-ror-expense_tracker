@@ -1,35 +1,32 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
 $enable-gradients: true;
 $enable-shadows: true;
 $enable-rounded: true;
 $enable-transitions: true;
-// $gradient: map-merge(
-//   (
-//     chill:
-//     warm: linear-gradient(135deg, #f2cd48 0%, #fd803f 100%),
-//     hot: linear-gradient(135deg, #f9445a 0%, #fd803f 100%),
-//     cold: linear-gradient(135deg, #8019c6 0%, #2f93cc 100%)
-//   ),
-//   $gradient
-// );
-$primary: night-fade-gradient;
 
 @import 'bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap');
 
-.full_height {
-  height: 100vh;
+body {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.bg-color {
+  background: #eaedee;
+  background: linear-gradient(to top, #fdfbfb, #eaedee);
+  // background: red;
+}
+
+.bg-navbar {
+  background: #000428;
+  background: #007bcb;
+  background: -moz-linear-gradient(-13deg, #007bcb 0%, #27a3df 100%, #6e7ff3 100%);
+  background: -webkit-linear-gradient(-13deg, #007bcb 0%, #27a3df 100%, #6e7ff3 100%);
+  background: linear-gradient(-13deg, #007bcb 0%, #27a3df 100%, #6e7ff3 100%);
+}
+
+.font-bold {
+  font-family: 'lato', sans-serif;
+  font-weight: 700;
 }

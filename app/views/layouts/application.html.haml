@@ -6,9 +6,11 @@
     %title= full_title(yield(:title))
     = csrf_meta_tags
     = csp_meta_tag
+    %link{rel: "stylesheet", href: "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", integrity: "sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN", crossorigin: "anonymous"}
     = bootstrap_js
-  %body.container-fluid.mh-100
-    = show_navbar_if_user_login
-    -# %p.notice= notice
-    -# %p.alert= alert
-    = yield
+  %body.container-fluid
+    = show_navbar_unless_root_path
+    .row.h-100.bg-color
+      .col.bg-color
+        = yield
+        %i.fas.fa-caret-left

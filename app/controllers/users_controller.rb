@@ -5,7 +5,9 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def show; end
+  def show
+    @title = "Welcome back #{@user.name.capitalize}"
+  end
 
   def new
     @user = User.new

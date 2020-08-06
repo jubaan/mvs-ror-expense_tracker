@@ -1,5 +1,5 @@
-- provide(:title, current_user.name.capitalize)
-%h1
+- provide(:title, @title)
+%h1.mt-4
   Hi,
   = current_user.name.capitalize
 %p
@@ -9,4 +9,3 @@
 
 
 %p Find me in app/views/users/show.html.haml
-= current_user.name
