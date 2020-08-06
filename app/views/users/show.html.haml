@@ -5,6 +5,16 @@
       Total spent:
       - hello = current_user.expenses.all.map do |expense|
         = expense.amount
+    %p= expenses_by_most_recent.count
 
+    .overflow
+      - expenses_by_most_recent.each do |e|
+        %li.card.mb-3.shadow-sm
+          .card-body
+            = e.name
+            = e.amount
+            = e.created_at.year
+            = link_to expense_path, method: :delete do
+              %i.fas.fa-door-open
 
     %p Find me in app/views/users/show.html.haml
