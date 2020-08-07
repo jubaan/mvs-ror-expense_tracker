@@ -1,2 +1,10 @@
-%h1 Groups#new
-%p Find me in app/views/groups/new.html.haml
+- provide(:title, "New Group")
+.row
+  .col.py-3
+    = simple_form_for(@group) do |f|
+      = f.error_notification
+      .form-inputs
+        = f.input :name
+        = f.input :icon, as: :file, required: true
+      .form-actions
+        = f.button :submit, "Update", class: 'btn btn-primary btn-lg w-100'

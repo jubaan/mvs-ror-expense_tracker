@@ -13,7 +13,7 @@
         %small.card-subtitle.text-muted= formated_date(e)
         %div
           %small.card-subtitle.mr-2
-            = link_to edit_expense_path(e), class: 'text-muted' do
+            = link_to edit_expense_path(e), method: :patch, class: 'text-muted' do
               Edit
               %i.fas.fa-edit
           %small.card-subtitle

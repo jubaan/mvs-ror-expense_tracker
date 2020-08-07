@@ -1,2 +1,13 @@
-%h1 Users#edit
-%p Find me in app/views/users/edit.html.haml
+- provide(:title, "Settings")
+.row
+  .col-xl.py-3
+    = simple_form_for(@user) do |f|
+      = f.error_notification
+      .form-inputs
+        = f.input :name
+        = f.input :email
+        = f.input :password
+      .form-actions
+        = f.button :submit, "Update Profile", class: 'btn btn-primary btn-lg w-100'
+  .col-xl.py-3
+    = link_to "Delete account", user_path(@user), method: :delete, class: 'btn btn-danger btn-lg w-100'
