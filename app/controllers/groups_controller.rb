@@ -2,10 +2,13 @@ class GroupsController < ApplicationController
   before_action :set_group, only: %i[show edit update destroy]
 
   def index
+    cookies[:original_referrer] = groups_path
     @groups = Group.includes(:expenses)
   end
 
-  def show; end
+  def show
+    cookies[:original_referrer] = group_path
+  end
 
   def new
     @group = Group.new
@@ -24,6 +27,8 @@ class GroupsController < ApplicationController
   end
 
   def update
+    redirect_to cookies[:original_referrer],
+                notice: 'Expense was successfully updated.'
     if @group.update(group_params)
       redirect_to @group, notice: 'Group was successfully updated.'
     else

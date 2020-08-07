@@ -11,5 +11,9 @@
   %body.container-fluid.bg-color
     = show_navbar_unless_root_path
     .row.d-flex.flex-column.h-100
+      %notice.alert.alert-success.fade.position-absolute.fixed-top= notice
+      %alert= alert
       .col.bg-color.h-100
         = yield
+  :javascript
+    $().alert('close')

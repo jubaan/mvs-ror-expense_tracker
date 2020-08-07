@@ -1,9 +1,9 @@
-%nav.row.navbar.navbar-dark.bg-primary.px-4.py-3.sticky-top
+%nav.row.navbar.navbar-dark.bg-primary.p-3.sticky-top
   .navbar-nav.d-flex.flex-row.w-100
     .col.nav-item.text-left.p-0.m-0
       = link_to destroy_user_session_path, method: :delete, class: 'nav-link' do
         %i.fas.fa-door-open
-    .col.navbar-brand.mx-auto.text-center.overflow-hidden= page_title(yield(:title))
+    .col-8.navbar-brand.mx-auto.text-center.overflow-hidden= page_title(yield(:title))
     .col.nav-item.active.text-right.p-0.m-0= show_menu_toggler_if_user_login
   #navbarNav.collapse.navbar-collapse
     %ul.navbar-nav.p-3

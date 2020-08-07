@@ -2,6 +2,7 @@ class ExpensesController < ApplicationController
   before_action :set_expense, only: %i[show edit update destroy]
 
   def index
+    cookies[:original_referrer] = expenses_path
     @expenses = Expense.includes([:groups, :authors])
   end
 
@@ -17,7 +18,7 @@ class ExpensesController < ApplicationController
     @expense = current_user.expenses.new(expense_params)
 
     if @expense.save
-      redirect_to expenses_path, notice: 'Expense was successfully created.'
+      redirect_to expenses_path, flash: { notice: 'Expense was successfully created.'}
     else
       render :new
     end
@@ -25,7 +26,7 @@ class ExpensesController < ApplicationController
 
   def update
     if @expense.update(expense_params)
-      redirect_to @expense, notice: 'Expense was successfully updated.'
+      redirect_to cookies[:original_referrer], notice: 'Expense was successfully updated.'
     else
       render :edit
     end
