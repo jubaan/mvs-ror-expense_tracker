@@ -1,11 +1,8 @@
 - provide(:title, 'Expenses')
-= link_to 'Add new expense', new_expense_path
-.row
-  .col.py-3
-    .overflow
-      - expenses_by_most_recent.each do |e|
-        %li.card.mb-3.shadow-sm
-          .card-body
-            = e.name
-            = e.amount
-            = e.created_at.year
+.row.h-100
+  .col-xl.px-4.pt-1.pb-5.h-100
+    .overflow-auto.h-100.pb-4
+      = render 'users/expense-card'
+    %div
+      hwllo
+

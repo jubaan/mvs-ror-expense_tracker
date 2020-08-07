@@ -14,12 +14,10 @@ class ExpensesController < ApplicationController
   def edit; end
 
   def create
-
     @expense = current_user.expenses.new(expense_params)
-    # @expense = Expense.new(name: params[:name], amount: params[:amount], group_id:params[:group_id], author_id: current_user)
 
     if @expense.save
-      redirect_to user_path(current_user), notice: 'Expense was successfully created.'
+      redirect_to expenses_path, notice: 'Expense was successfully created.'
     else
       render :new
     end

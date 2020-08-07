@@ -3,10 +3,13 @@
     .card-body
   .card.mb-2.shadow-sm
     .card-body.px-4.py-2
+      %small.card-subtitle.text-primary.pb-0
+        = e.group.icon
+        = link_to e.group.name.upcase, group_path(e.group)
       .d-flex.flex-row.justify-content-between.m-0
         %h5.card-title.m-0= e.name
         %h5.card-title.m-0= number_to_currency(e.amount)
-      %div.w-100.d-flex.flex-row.justify-content-between.align-items-center.mt-2
+      %div.w-100.d-flex.flex-row.justify-content-between.align-items-center
         %small.card-subtitle.text-muted= formated_date(e)
         %div
           %small.card-subtitle.mr-2
