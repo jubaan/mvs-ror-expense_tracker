@@ -26,6 +26,6 @@ class ApplicationController < ActionController::Base
   end
 
   def signed_in_root_path(resource)
-    user_path(current_user)
+    stored_location_for(resource) || user_path(current_user)
   end
 end
