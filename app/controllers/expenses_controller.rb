@@ -3,7 +3,7 @@ class ExpensesController < ApplicationController
 
   def index
     cookies[:original_referrer] = expenses_path
-    @expenses = Expense.includes([:groups, :authors])
+    @expenses = Expense.includes(%i[groups authors])
   end
 
   def show; end
@@ -18,7 +18,7 @@ class ExpensesController < ApplicationController
     @expense = current_user.expenses.new(expense_params)
 
     if @expense.save
-      redirect_to expenses_path, flash: { notice: 'Expense was successfully created.'}
+      redirect_to expenses_path, flash: { notice: 'Expense was successfully created.' }
     else
       render :new
     end

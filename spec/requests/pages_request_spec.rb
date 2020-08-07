@@ -1,19 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe "Pages", type: :request do
-
-  describe "GET /welcome" do
-    it "returns http success" do
-      get "/pages/welcome"
+RSpec.describe 'Pages', type: :request do
+  describe 'GET /welcome' do
+    it 'returns http success' do
+      get '/pages/welcome'
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET /settings" do
-    it "returns http success" do
-      get "/pages/settings"
+  describe 'GET /settings' do
+    it 'returns http success' do
+      get '/pages/settings'
       expect(response).to have_http_status(:success)
     end
   end
-
 end

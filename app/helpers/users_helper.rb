@@ -19,6 +19,6 @@ module UsersHelper
   end
 
   def total_group_current_user(group)
-    current_user.expenses.where(group: group).map { |e| e.amount }.sum
+    current_user.expenses.where(group: group).map(&:amount).sum
   end
 end
