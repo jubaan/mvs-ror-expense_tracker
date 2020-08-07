@@ -1,21 +1,9 @@
 - provide(:title, user_name)
-.row
+.row.h-75
   .col-xl.bg-white.p-4.d-flex.justify-content-between.shadow-sm
     %h3.m-0 Gift credit:
     %h3.m-0= total_expenses_current_user
-  %nav.col-xl.px-4.py-2
-    hello
-  .col-xl.p-3
-    %p= expenses_by_most_recent.count
-
-    .overflow
-      - expenses_by_most_recent.each do |e|
-        %li.card.mb-3.shadow-sm
-          .card-body
-            = e.name
-            = e.amount
-            = e.created_at.year
-            = link_to expense_path, method: :delete do
-              %i.fas.fa-door-open
-
-    %p Find me in app/views/users/show.html.haml
+  .col-xl.px-4.pt-1.pb-5.h-100
+    .overflow-auto.h-100
+      = render 'users/expense-card'
+  = link_to 'Add Expense', new_expense_path, class: 'fixed-bottom btn btn-success btn-lg p-3 m-1 shadow-sm'

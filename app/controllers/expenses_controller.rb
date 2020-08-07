@@ -19,7 +19,7 @@ class ExpensesController < ApplicationController
     # @expense = Expense.new(name: params[:name], amount: params[:amount], group_id:params[:group_id], author_id: current_user)
 
     if @expense.save
-      redirect_to expenses_path, notice: 'Expense was successfully created.'
+      redirect_to user_path(current_user), notice: 'Expense was successfully created.'
     else
       render :new
     end
@@ -35,7 +35,7 @@ class ExpensesController < ApplicationController
 
   def destroy
     @expense.destroy
-    redirect_to groups_url, notice: 'Expense was successfully destroyed.'
+    redirect_to request.referrer, notice: 'Expense was successfully destroyed.'
   end
 
   private
