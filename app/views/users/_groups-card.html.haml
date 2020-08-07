@@ -1,0 +1,28 @@
+- groups_by_most_recent.each do |g|
+  -# %li.card.mb-3.shadow-sm
+    .card-body
+  .card.mb-2.shadow-sm
+    .card-body.px-4.py-2
+      .d-flex.flex-row.justify-content-between.mt-2.mb-2
+        %small.card-subtitle.text-muted.pb-0 Total items:
+        %small.card-subtitle.text-muted.pb-0= g.expenses.count
+      .d-flex.flex-row.justify-content-between.m-0.mb-2
+        %h5.card-title.m-0
+          = g.icon
+          = g.name
+        -# %h5.card-title.m-0= total_group_current_user(g)
+        %h5.card-title.m-0= total_group_current_user(g)
+      %div.w-100.d-flex.flex-row.justify-content-between.align-items-center
+        %small.card-subtitle.text-muted= formated_date(g)
+        %div
+          %small.card-subtitle.mr-2
+            = link_to edit_group_path(g), class: 'text-muted' do
+              Edit
+              %i.fas.fa-edit
+          %small.card-subtitle
+            = link_to group_path(g), method: :delete, data: { confirm: "This will erase the group and all linked items, Are you sure you want to continue?" }, class: 'text-danger'  do
+              Delete
+              %i.fas.fa-trash-alt
+      -# -# = kke.name, class: 'card-title'
+      -# -# = link_to expense_path(expense), method: :delete do
+      -#   %i.fas.fa-door-open.

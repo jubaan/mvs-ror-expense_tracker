@@ -1,19 +1,22 @@
-- expenses_by_most_recent.each do |e|
+- expenses_by_most_recent.includes([:group,:author]).each do |e|
   -# %li.card.mb-3.shadow-sm
     .card-body
   .card.mb-2.shadow-sm
     .card-body.px-4.py-2
-      %small.card-subtitle.text-primary.pb-0
-        = e.group.icon
-        = link_to e.group.name.upcase, group_path(e.group)
-      .d-flex.flex-row.justify-content-between.m-0
+      .d-flex.flex-row.justify-content-between.mt-2.mb-2
+        %small.card-subtitle.text-primary.pb-0
+          = e.group.icon
+          = link_to e.group.name.upcase, group_path(e.group)
+        %small.card-subtitle.secondary-info.pb-0
+          = link_to e.author.name.upcase, group_path(e.group)
+      .d-flex.flex-row.justify-content-between.m-0.mb-2
         %h5.card-title.m-0= e.name
         %h5.card-title.m-0= number_to_currency(e.amount)
       %div.w-100.d-flex.flex-row.justify-content-between.align-items-center
         %small.card-subtitle.text-muted= formated_date(e)
         %div
           %small.card-subtitle.mr-2
-            = link_to expense_path(e), method: :delete, class: 'text-muted' do
+            = link_to edit_expense_path(e), class: 'text-muted' do
               Edit
               %i.fas.fa-edit
           %small.card-subtitle

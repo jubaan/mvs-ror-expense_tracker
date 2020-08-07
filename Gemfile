@@ -14,6 +14,7 @@ gem 'webpacker', '~> 4.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'bootstrap', '~> 4.5'
+gem 'bullet', '~> 6.1'
 gem 'devise', '~> 4.7', '>= 4.7.2'
 gem 'faker', '~> 2.13'
 gem 'font-awesome-sass', '~> 5.13.0'

@@ -1,8 +1,6 @@
 - provide(:title, 'Expenses')
 .row.h-100
-  .col-xl.px-4.pt-1.pb-5.h-100
-    .overflow-auto.h-100.pb-4
+  .col-xl.px-4.pt-1.h-100
+    .overflow-auto.h-75
       = render 'users/expense-card'
-    %div
-      hwllo
-
+  = link_to 'Add Expense', new_expense_path, class: 'fixed-bottom btn btn-success btn-lg p-3 m-1 shadow-sm'
