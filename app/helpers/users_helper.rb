@@ -5,6 +5,12 @@ module UsersHelper
 
   def user_name
     name = current_user.name.downcase.capitalize
-    name.length > 7 ? "Welcome" : "Hi, #{name}!"
+    name.length > 7 ? 'Welcome' : "Hi, #{name}!"
+  end
+
+  def total_expenses_current_user
+    sum = 0
+    current_user.expenses.each { |e| sum += e.amount }
+    number_to_currency(sum)
   end
 end

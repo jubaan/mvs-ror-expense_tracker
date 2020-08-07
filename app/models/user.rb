@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :rememberable,
          :validatable
 
-  has_many :expenses, foreign_key: 'author_id'
+  has_many :expenses, foreign_key: 'author_id', dependent: :destroy
   has_many :groups, through: :expenses
 end
