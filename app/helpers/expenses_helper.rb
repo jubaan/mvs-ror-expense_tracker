@@ -11,6 +11,6 @@ module ExpensesHelper
     y = expense.created_at.year
     m = expense.created_at.month
     d = expense.created_at.day
-    format('%<day>d/%<month>d/%<year>d', [d, m, y])
+    format('%d/%d/%d', d, m, y) # rubocop:disable Style/FormatStringToken
   end
 end
