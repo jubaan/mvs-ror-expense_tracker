@@ -19,7 +19,7 @@ module ApplicationHelper
 
   def show_navbar_unless_root_path
     path = request.path
-    if path == '/sign_in' || path == '/sign_up'
+    if %w[/sign_in /sign_up].include?(path)
       render 'layouts/log-navbar'
     elsif path == '/'
     else
