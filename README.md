@@ -22,6 +22,8 @@
 - Bootstrap v4.5
 - Simple_form
 - PostgresSQL
+- AWS S3
+- CarrierWave
 
 ## Getting Started
 
