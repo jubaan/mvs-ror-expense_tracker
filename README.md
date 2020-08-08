@@ -36,9 +36,9 @@ Postgres: >=12.3
 
 After cloning and installing the prerequisites, follow this steps.
 
-- Configure Postgres database local configuration
+- Configure Postgres database
 - Run ``bundle install``
-- Run ``rails db:create db:migrate db:seed``
+- Run ``rails db:create db:migrate``
 - Run ``rails server``
 - Open `http://localhost:3000/` in your browser
 - Register and explore the application
