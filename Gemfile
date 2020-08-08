@@ -13,12 +13,17 @@ gem 'webpacker', '~> 4.0'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
+gem 'aws-sdk-rails', '~> 3.1'
 gem 'bootstrap', '~> 4.5'
 gem 'bullet', '~> 6.1'
+gem 'carrierwave', '~> 2.1'
+gem 'carrierwave-aws', '~> 1.5'
 gem 'devise', '~> 4.7', '>= 4.7.2'
 gem 'faker', '~> 2.13'
+gem 'figaro', '~> 1.2'
 gem 'font-awesome-sass', '~> 5.13.0'
 gem 'haml-rails', '~> 2.0', '>= 2.0.1'
+gem 'mini_magick', '~> 4.10', '>= 4.10.1'
 gem 'omniauth', '~> 1.9', '>= 1.9.1'
 gem 'omniauth-github', '~> 1.4'
 gem 'simple_form', '~> 5.0', '>= 5.0.2'

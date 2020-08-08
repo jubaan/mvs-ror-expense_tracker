@@ -37,3 +37,7 @@ yarn-debug.log*
 node_modules
 coverage
 coverage
+
+# Ignore application configuration
+/config/application.yml
+.env

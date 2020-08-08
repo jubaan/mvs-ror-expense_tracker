@@ -5,8 +5,9 @@
         %small.card-subtitle.text-muted.pb-0 Total items:
         %small.card-subtitle.text-muted.pb-0= g.expenses.where(author: current_user).count
       .d-flex.flex-row.justify-content-between.m-0.mb-2
-        .div.d-flex.flex-row
-          = image_tag g.icon, class: 'icon-group mr-2'
+        .div.d-flex.flex-row.align-items-center
+          = image_tag g.icon.url, class: 'icon-expense'
+          -# = image_tag g.icon, class: 'icon-group mr-2'
           %h5.card-title.m-0= link_to g.name.capitalize, group_path(g)
         %h5.card-title.m-0= number_to_currency(total_group_current_user(g))
       %div.w-100.d-flex.flex-row.justify-content-between.align-items-center

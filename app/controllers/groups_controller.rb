@@ -8,6 +8,7 @@ class GroupsController < ApplicationController
 
   def show
     cookies[:original_referrer] = group_path
+    @icon = Group.find(params[:id])
   end
 
   def new
@@ -48,6 +49,6 @@ class GroupsController < ApplicationController
   end
 
   def group_params
-    params.require(:group).permit(:name, :icon)
+    params.require(:group).permit(:name, :icon, :region)
   end
 end
