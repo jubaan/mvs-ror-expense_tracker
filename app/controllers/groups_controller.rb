@@ -48,6 +48,6 @@ class GroupsController < ApplicationController
   end
 
   def group_params
-    params.fetch(:group, {})
+    params.require(:group).permit(:name, :icon)
   end
 end
