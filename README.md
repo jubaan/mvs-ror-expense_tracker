@@ -12,7 +12,7 @@
 ![image01](https://user-images.githubusercontent.com/25774518/89700315-d8d8e600-d8f2-11ea-83f0-392af73f5d93.jpg)
 ![image02](https://user-images.githubusercontent.com/25774518/89700313-d8404f80-d8f2-11ea-8f98-f017d833eaf7.jpg)
 ![image03](https://user-images.githubusercontent.com/25774518/89700316-d8d8e600-d8f2-11ea-9f0b-31a8abd5f167.jpg)
-![expense04](https://user-images.githubusercontent.com/25774518/89700318-d9717c80-d8f2-11ea-9ed6-3e8bbbadbc07.jpg)
+![image04](https://user-images.githubusercontent.com/25774518/89700318-d9717c80-d8f2-11ea-9ed6-3e8bbbadbc07.jpg)
 
 ## Built With
 - Ruby v2.7.1
