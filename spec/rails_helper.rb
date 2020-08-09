@@ -1,6 +1,7 @@
 require 'spec_helper'
 require 'faker'
 require 'simplecov'
+require 'capybara/rspec'
 
 SimpleCov.start 'rails'
 
