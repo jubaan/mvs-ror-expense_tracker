@@ -6,13 +6,9 @@ class ExpensesController < ApplicationController
     @expenses = Expense.includes(%i[groups authors])
   end
 
-  def show; end
-
   def new
     @expense = Expense.new
   end
-
-  def edit; end
 
   def create
     @expense = current_user.expenses.new(expense_params)
@@ -20,7 +16,7 @@ class ExpensesController < ApplicationController
     if @expense.save
       redirect_to expenses_path, flash: { notice: 'Expense was successfully created.' }
     else
-      render :new
+      render :new, flash: { alert: 'Review your data' }
     end
   end
 

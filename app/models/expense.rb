@@ -4,7 +4,7 @@ class Expense < ApplicationRecord
 
   scope :ordered_expenses_by_most_recent, -> { order(created_at: :desc) }
 
-  validates :name, presence: true
-  validates :amount, presence: true
-  validates :group, presence: true
+  validates :name, :amount, :group, presence: true
+  validates :amount,
+            numericality: { greater_than: 0, less_than_or_equal_to: 99_999 }
 end

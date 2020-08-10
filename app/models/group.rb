@@ -6,6 +6,5 @@ class Group < ApplicationRecord
 
   scope :ordered_groups_by_most_recent, -> { order(created_at: :desc) }
 
-  validates :name, presence: true
-  validates :icon, presence: true
+  validates :name, :icon, presence: true, length: { in: 3..20 }
 end

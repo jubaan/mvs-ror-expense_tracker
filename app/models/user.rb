@@ -8,7 +8,6 @@ class User < ApplicationRecord
   has_many :expenses, foreign_key: 'author_id', dependent: :destroy
   has_many :groups, through: :expenses
 
-  validates :name, presence: true
-  validates :email, presence: true
-  validates :password, presence: true
+  validates :name, :email, presence: true, length: { in: 1..50 }
+  validates :password, presence: true, length: { in: 6..20 }
 end
