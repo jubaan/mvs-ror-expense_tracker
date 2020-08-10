@@ -4,9 +4,9 @@ $enable-rounded: true;
 $enable-transitions: true;
 $enable-responsive-font-sizes: true;
 
-@import 'bootswatch/lux/variables';
+@import 'bootswatch/flatly/variables';
 @import 'bootstrap';
-@import 'bootswatch/minty/bootswatch';
+@import 'bootswatch/flatly/bootswatch';
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import 'site-stylesheet'
