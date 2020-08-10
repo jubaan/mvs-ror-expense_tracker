@@ -6,7 +6,7 @@
       .form-inputs
         .media
           .d-flex.align-items-center.mb-4
-            = image_tag current_user.image.url, width: '150', height: '150', class: 'rounded-circle mr-3'
+            = show_user_profile_image
             = f.input :image, as: :file, label: 'Change profile image'
         .media-body
           = f.input :name
