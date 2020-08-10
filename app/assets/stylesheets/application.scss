@@ -4,41 +4,9 @@ $enable-rounded: true;
 $enable-transitions: true;
 $enable-responsive-font-sizes: true;
 
+@import 'bootswatch/lux/variables';
 @import 'bootstrap';
+@import 'bootswatch/minty/bootswatch';
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap');
-
-body {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-}
-
-.bg-color {
-  background: #eaedee;
-  background: linear-gradient(to top, #fdfbfb, #eaedee);
-}
-
-.bg-navbar {
-  background: #000428;
-  background: #007bcb;
-  background: -moz-linear-gradient(-13deg, #007bcb 0%, #27a3df 100%, #6e7ff3 100%);
-  background: -webkit-linear-gradient(-13deg, #007bcb 0%, #27a3df 100%, #6e7ff3 100%);
-  background: linear-gradient(-13deg, #007bcb 0%, #27a3df 100%, #6e7ff3 100%);
-}
-
-.font-bold {
-  font-family: 'lato', sans-serif;
-  font-weight: 700;
-}
-
-.icon-expense {
-  height: 15px;
-  width: 15px;
-}
-
-.icon-group {
-  height: 25px;
-  width: 25px;
-}
+@import 'site-stylesheet'
