@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    unless current_user == @user # rubocop:disable Style/GuardClause
+    unless current_user == @user
       flash[:notice] = 'Access restricted!'
       redirect_to user_path(current_user)
     end
@@ -19,7 +19,10 @@ class UsersController < ApplicationController
 
   def edit; end
 
-  def create; end
+  def create
+    @user = User.build(user_params)
+    @user.save
+  end
 
   def update
     if @user.update(user_params)
