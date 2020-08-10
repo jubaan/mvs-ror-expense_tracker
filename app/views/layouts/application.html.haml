@@ -11,10 +11,13 @@
   %body.container-fluid.bg-color
     = show_navbar_unless_root_path
     .row.d-flex.flex-column.h-100
-      -# %notice.alert.alert-success.alert-dismissible.show.fade.position-absolute.fixed-top= notice
-      -# %alert= alert
+      - flash.each do |type, msg|
+        .alert.alert-info.p-2.m-3.position-absolute.fixed-top
+          = msg
       .col.bg-color.h-100
         = yield
-  -# :javascript
-  -#     $('.alert').alert('close')
-  -#   }, 1000);
+  :javascript
+    setTimeout(function () {
+      $('.alert').addClass('show').alert('close')
+    }, 1000);
+

@@ -8,6 +8,11 @@ class GroupsController < ApplicationController
 
   def show
     cookies[:original_referrer] = group_path
+    @icon = Group.find(params[:id])
+  end
+
+  def new
+    @group = Group.new
   end
 
   def create
