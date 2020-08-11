@@ -52,6 +52,7 @@ end
 group :test do
   gem 'capybara', '~> 3.33'
   gem 'simplecov', '~> 0.18.5', require: false
+  gem 'shoulda-matchers', '~> 4.3'
 end
 
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

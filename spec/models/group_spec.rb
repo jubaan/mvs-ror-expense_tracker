@@ -8,11 +8,11 @@ RSpec.describe Group, type: :model do
   end
 
   it 'Group is valid without icon' do
-    group.icon = 'icon'
+    group.icon = nil
     expect(group).to be_valid
   end
 
   it 'User is invalid without name' do
-    expect(Group.build(name: nil)).to_not be_valid
+    expect(Group.new(name: nil)).to_not be_valid
   end
 end
