@@ -18,7 +18,7 @@ module UsersHelper
 
   def total_expenses_current_user
     sum = 0
-    (current_user.expenses - current_user.expenses.where('group_id <> 1')).each { |e| sum += e.amount }
+    current_user.expenses.each { |e| sum += e.amount }
     number_to_currency(sum)
   end
 
