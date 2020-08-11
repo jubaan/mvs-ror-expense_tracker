@@ -1,5 +1,5 @@
 
-# Creats the icon list
-Icon.all.map { |icon| icon.url.scan(/[^\d-]\w+[^\.png]/) }
+# Creates default category "Not Assigned"
+Group.create({ name: 'Not Assigned' })
 
 

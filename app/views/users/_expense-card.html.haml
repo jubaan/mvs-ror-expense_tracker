@@ -3,7 +3,8 @@
     .card-body.px-4.py-2
       .d-flex.flex-row.justify-content-between.mt-2.mb-2
         %small.card-subtitle.text-primary.pb-0
-          = image_tag e.group.icon.url, class: 'icon-expense'
+          - if e.group.icon.url
+            = image_tag e.group.icon.url, class: 'icon-expense'
           = link_to e.group.name.upcase, group_path(e.group)
         %small.card-subtitle.text-muted.pb-0= e.author.name.capitalize
       .d-flex.flex-row.justify-content-between.m-0.mb-2
