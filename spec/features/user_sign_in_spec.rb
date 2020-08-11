@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "UserSignIns", type: :feature do
+RSpec.feature 'UserSignIns', type: :feature do
   let(:user) { create :user }
 
   scenario 'User visit sign in page, fills and submit the form to enter applications' do

@@ -15,6 +15,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'aws-sdk-rails', '~> 3.1'
 gem 'bootstrap', '~> 4.5'
+gem 'bootswatch', '~> 4.3', '>= 4.3.1'
 gem 'bullet', '~> 6.1'
 gem 'carrierwave', '~> 2.1'
 gem 'carrierwave-aws', '~> 1.5'
@@ -27,7 +28,6 @@ gem 'mini_magick', '~> 4.10', '>= 4.10.1'
 gem 'omniauth', '~> 1.9', '>= 1.9.1'
 gem 'omniauth-github', '~> 1.4'
 gem 'simple_form', '~> 5.0', '>= 5.0.2'
-gem 'bootswatch', '~> 4.3', '>= 4.3.1'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

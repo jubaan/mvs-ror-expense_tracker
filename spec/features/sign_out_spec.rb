@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "UserSignOuts", type: :feature do
+RSpec.feature 'UserSignOuts', type: :feature do
   let(:user) { build :user }
 
   scenario 'User sign_out the application' do
