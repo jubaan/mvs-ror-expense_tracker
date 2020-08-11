@@ -1,6 +1,6 @@
 module ExpensesHelper
   def expenses_by_most_recent
-    current_user.expenses.ordered_expenses_by_most_recent
+    current_user.expenses.grouped_ordered_expenses_by_most_recent
   end
 
   def expenses_by_most_recent_for_group(group)
