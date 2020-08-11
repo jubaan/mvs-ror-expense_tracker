@@ -26,10 +26,9 @@ class GroupsController < ApplicationController
   end
 
   def update
-    redirect_to cookies[:original_referrer],
-                notice: 'Expense was successfully updated.'
     if @group.update(group_params)
-      redirect_to @group, notice: 'Group was successfully updated.'
+      redirect_to cookies[:original_referrer],
+                  notice: 'Expense was successfully updated.'
     else
       render :edit
     end

@@ -14,8 +14,9 @@
         %small.card-subtitle.text-muted= formated_date(g)
         %div
           %small.card-subtitle.mr-2
-            = link_to edit_group_path(g), class: 'text-muted' do
-              Edit
+            - unless g.id == 1
+              = link_to edit_group_path(g), class: 'text-muted' do
+                Edit
               %i.fas.fa-edit
           %small.card-subtitle
             = link_to group_path(g), method: :delete, data: { confirm: "This will erase the group and all linked items, Are you sure you want to continue?" }, class: 'text-danger'  do
