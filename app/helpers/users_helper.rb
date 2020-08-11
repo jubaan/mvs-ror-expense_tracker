@@ -1,16 +1,4 @@
 module UsersHelper
-  def timeline_expenses
-    Expenses.includes(:groups).ordered_expenses_by_most_recent.where(
-      user: current_user
-    )
-  end
-
-  def timeline_groups
-    Groups.includes(:expenses).ordered_groups_by_most_recent.where(
-      user: current_user
-    )
-  end
-
   def user_name
     name = current_user.name.downcase.capitalize
     name.length > 7 ? 'Welcome' : "Hi, #{name}!"

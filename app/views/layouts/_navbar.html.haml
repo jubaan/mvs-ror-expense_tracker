@@ -12,9 +12,9 @@
       %li.nav-item.active
         = link_to_unless_current 'Profile', edit_user_path(current_user), class: 'nav-link'
       %li.nav-item.active
-        = link_to_unless_current 'All expenses', expenses_path, class: 'nav-link'
+        = link_to_unless_current 'Grouped expenses', expenses_path, class: 'nav-link'
       %li.nav-item.active
-        = link_to_unless_current 'All ungrouped expenses', group_path(1), class: 'nav-link'
+        = link_to_unless_current 'Ungrouped expenses', group_path(1), class: 'nav-link'
       %li.nav-item.active
         = link_to_unless_current 'Groups', groups_path, class: 'nav-link'
       %li.nav-item.active

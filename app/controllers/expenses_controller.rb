@@ -3,7 +3,7 @@ class ExpensesController < ApplicationController
 
   def index
     cookies[:original_referrer] = expenses_path
-    @expenses = Expense.includes(%i[groups authors])
+    @expenses = Expense.all
   end
 
   def new
