@@ -16,9 +16,15 @@ module UsersHelper
     name.length > 7 ? 'Welcome' : "Hi, #{name}!"
   end
 
+  def total_expenses_current_user_for_dashboard
+    sum = 0
+    current_user.expenses.ordered_expenses_by_most_recent.each { |e| sum += e.amount }
+    number_to_currency(sum)
+  end
+
   def total_expenses_current_user
     sum = 0
-    current_user.expenses.each { |e| sum += e.amount }
+    current_user.expenses.grouped_ordered_expenses_by_most_recent.each { |e| sum += e.amount }
     number_to_currency(sum)
   end
 
