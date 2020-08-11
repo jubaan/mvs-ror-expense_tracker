@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2020_08_10_174638) do
     t.decimal "amount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "group_id", null: false
+    t.bigint "group_id"
     t.index ["author_id"], name: "index_expenses_on_author_id"
     t.index ["group_id"], name: "index_expenses_on_group_id"
   end
