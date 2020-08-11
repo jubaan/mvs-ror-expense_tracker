@@ -28,9 +28,10 @@ RSpec.describe Expense, type: :model do
     end
   end
 
-  describe Link, 'validations' do
+  describe 'validations' do
     it { is_expected.to validate_presence_of(:name) }
-    it { is_expected.to validate_presence_of(:group) }
-    it { is_expected.to validate_presence_of(:author) }
+    it { is_expected.to validate_length_of(:name) }
+    it { should belong_to(:group) }
+    it { should belong_to(:author) }
   end
 end
