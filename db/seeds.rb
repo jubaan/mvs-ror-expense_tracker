@@ -12,7 +12,7 @@ end
   Expense.create(
     name: Faker::Commerce.product_name,
     amount: Faker::Commerce.price,
-    author: julio
-    group: Group.all.sample
+    author: User.first,
+    group: Group.all.to_set.sample
   )
 end

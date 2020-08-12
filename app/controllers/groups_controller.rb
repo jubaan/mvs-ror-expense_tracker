@@ -3,7 +3,7 @@ class GroupsController < ApplicationController
 
   def index
     cookies[:original_referrer] = groups_path
-    @groups = Group.all
+    @groups = Group.includes([:expense, :user]).limit(10)
   end
 
   def show
