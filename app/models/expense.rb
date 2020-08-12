@@ -3,6 +3,7 @@ class Expense < ApplicationRecord
   belongs_to :group
 
   scope :ordered_expenses_by_most_recent, -> { includes(%i[group author]).order(created_at: :desc) }
+  scope :ec_grouped_ordered_expenses_by_most_recent, -> { where('group_id <> 1').includes([:group, :author]).order(created_at: :desc) }
   scope :grouped_ordered_expenses_by_most_recent, -> { where('group_id <> 1').order(created_at: :desc) }
 
   validates :name, :amount, presence: true

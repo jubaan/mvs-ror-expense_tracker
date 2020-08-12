@@ -4,7 +4,7 @@ module ExpensesHelper
   end
 
   def expenses_by_most_recent_for_index
-    current_user.expenses.grouped_ordered_expenses_by_most_recent
+    current_user.expenses.ec_grouped_ordered_expenses_by_most_recent
   end
 
   def expenses_by_most_recent_for_group(group)
