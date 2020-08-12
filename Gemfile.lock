@@ -209,6 +209,9 @@ GEM
     jaro_winkler (1.5.4-java)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
+    jit_preloader (0.3.0)
+      activerecord (> 4.2, < 7)
+      activesupport
     jmespath (1.4.0)
     jwt (2.2.1)
     listen (3.2.1)
@@ -453,6 +456,7 @@ DEPENDENCIES
   guard-livereload (~> 2.5, >= 2.5.2)
   haml-rails (~> 2.0, >= 2.0.1)
   jbuilder (~> 2.7)
+  jit_preloader (~> 0.3.0)
   listen (~> 3.2)
   mini_magick (~> 4.10, >= 4.10.1)
   omniauth (~> 1.9, >= 1.9.1)

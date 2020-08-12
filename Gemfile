@@ -28,6 +28,7 @@ gem 'mini_magick', '~> 4.10', '>= 4.10.1'
 gem 'omniauth', '~> 1.9', '>= 1.9.1'
 gem 'omniauth-github', '~> 1.4'
 gem 'simple_form', '~> 5.0', '>= 5.0.2'
+gem 'jit_preloader', '~> 0.3.0'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

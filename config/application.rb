@@ -25,4 +25,13 @@ module Capstone
 
     config.assets.initialize_on_precomplie = false
   end
+
+  JitPreloader.globally_enabled = true
+
+  ActiveSupport::Notifications.subscribe('n_plus_one_query') do |_event, data|
+    message =
+      "N+1 Query detected: #{data[:association]} on #{data[:source].class}"
+    backtrace = caller.select { |r| r.starts_with?(Rails.root.to_s) }
+    Rails.logger.debug("\n\n#{message}\n#{backtrace.join("\n")}\n".red)
+  end
 end
