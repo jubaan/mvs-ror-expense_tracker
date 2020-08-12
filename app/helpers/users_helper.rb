@@ -31,6 +31,7 @@ module UsersHelper
       render = image_tag current_user.image.url, width: '150px', height: '150px', class: 'rounded-circle mr-3'
     end
   end
+
   # rubocop:enable Layout/LineLength
   # rubocop:enable Lint/UselessAssignment
 end
