@@ -13,7 +13,7 @@ class Expense < ApplicationRecord
         }
   scope :grouped_ordered_expenses_by_most_recent,
         -> { where('group_id <> 1').order(created_at: :desc) }
-  scope :count_expenses, lambda { |group| where(group: group).count }
+  scope :count_expenses, ->(group) { where(group: group).count }
 
   validates :name, :amount, presence: true
   validates :group, presence: true
