@@ -8,6 +8,14 @@
 ### Check it online!
 [Live preview](https://enigmatic-refuge-65429.herokuapp.com/)
 
+You can create your own account or see an example with this username and
+password.
+
+``
+email   : user@user.com
+passwor : 1234567
+``
+
 ### Previews
 ![image01](https://user-images.githubusercontent.com/25774518/89700315-d8d8e600-d8f2-11ea-83f0-392af73f5d93.jpg)
 ![image02](https://user-images.githubusercontent.com/25774518/89700313-d8404f80-d8f2-11ea-8f98-f017d833eaf7.jpg)
