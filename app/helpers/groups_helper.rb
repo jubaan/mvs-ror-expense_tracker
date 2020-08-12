@@ -1,7 +1,5 @@
 # rubocop:disable Naming/MethodParameterName
-# rubocop:disable Lint/Void
 # rubocop:disable Lint/UselessAssignment
-# rubocop:disable Style/GuardClause
 module GroupsHelper
   def groups_by_most_recent
     current_user.groups.ordered_groups_by_most_recent.to_set
@@ -10,7 +8,7 @@ module GroupsHelper
   def show_group_selection(f)
     render =
       f.input :group_id,
-      collection: Group.all.uniq, selected: 1, include_blank: false
+              collection: Group.all.uniq, selected: 1, include_blank: false
   end
 
   def show_group_selection_update(f)
@@ -24,6 +22,5 @@ module GroupsHelper
   end
 end
 # rubocop:enable Naming/MethodParameterName
-# rubocop:enable Lint/Void
+
 # rubocop:enable Lint/UselessAssignment
-# rubocop:enable Style/GuardClause

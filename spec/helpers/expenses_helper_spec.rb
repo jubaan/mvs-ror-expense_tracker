@@ -5,8 +5,17 @@ RSpec.describe ExpensesHelper, type: :helper do
     let(:current_user) { create :user }
     let!(:entretainment) { create :group, name: 'entretainment' }
     let!(:food) { create :group, name: 'food' }
-    let!(:cinema) { create :expense, name: 'cinema', amount: 5.50, group: entretainment, author: current_user }
-    let!(:tacos) { create :expense, name: 'tacos', amount: 4.50, group: food, author: current_user }
+    let!(:cinema) do
+      create :expense,
+             name: 'cinema',
+             amount: 5.50,
+             group: entretainment,
+             author: current_user
+    end
+    let!(:tacos) do
+      create :expense,
+             name: 'tacos', amount: 4.50, group: food, author: current_user
+    end
 
     it 'returns an ordered array by most recent' do
       actual = [tacos, cinema]
@@ -17,7 +26,14 @@ RSpec.describe ExpensesHelper, type: :helper do
   describe '#formated_date' do
     let(:current_user) { create :user }
     let!(:entretainment) { create :group, name: 'entretainment' }
-    let!(:cinema) { create :expense, name: 'cinema', amount: 5.50, group: entretainment, author: current_user, created_at: '2020-01-01' }
+    let!(:cinema) do
+      create :expense,
+             name: 'cinema',
+             amount: 5.50,
+             group: entretainment,
+             author: current_user,
+             created_at: '2020-01-01'
+    end
 
     it 'formats date by day/mont/year' do
       actual = '1/1/2020'

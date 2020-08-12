@@ -1,7 +1,7 @@
 require 'rails_helper'
-include Warden::Test::Helpers
 
 RSpec.feature 'AddExpenses', type: :feature do
+  include Warden::Test::Helpers
   let(:user) { create :user }
 
   it 'visit dashboard and clicks on add expense' do
