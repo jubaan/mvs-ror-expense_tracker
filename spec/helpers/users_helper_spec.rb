@@ -1,15 +1,29 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the UsersHelper. For example:
-#
-# describe UsersHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe UsersHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '#user_name' do
+    let(:current_user) { create :user }
+
+    it "returns 'Hi, current_user.name!' if name length is less than 7 chars" do
+      current_user.name = 'Julio'
+      expect(user_name).to match("Hi, #{current_user.name}!")
+    end
+
+    it "returns 'Welcome!' if name length is less than 7 chars" do
+      current_user.name = 'Maria Queme'
+      expect(user_name).to match('Welcome')
+    end
+  end
+
+  describe '#total_expenses_current_user_for_dashboard' do
+    let(:current_user) { create :user }
+    let!(:entretainment) { create :group, name: 'entretainment' }
+    let!(:food) { create :group, name: 'food' }
+    let!(:cinema) { create :expense, name: 'cinema', amount: 5.50, group: entretainment, author: current_user }
+    let!(:tacos) { create :expense, name: 'tacos', amount: 4.50, group: food, author: current_user }
+
+    it 'sums all expenses amount' do
+      expect(total_expenses_current_user_for_dashboard).to eq('$10.00')
+    end
+  end
 end

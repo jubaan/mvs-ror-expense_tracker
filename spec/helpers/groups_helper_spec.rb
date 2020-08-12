@@ -11,5 +11,16 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe GroupsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '#groups_by_most_recent' do
+    let(:current_user) { create :user }
+    let!(:entretainment) { create :group, name: 'entretainment' }
+    let!(:food) { create :group, name: 'food' }
+    let!(:cinema) { create :expense, name: 'cinema', amount: 5.50, group: entretainment, author: current_user }
+    let!(:tacos) { create :expense, name: 'tacos', amount: 4.50, group: food, author: current_user }
+
+    it 'returns an ordered set by most recent' do
+      actual = [entretainment, food].to_set
+      expect(groups_by_most_recent).to eq(actual)
+    end
+  end
 end

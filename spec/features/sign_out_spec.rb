@@ -1,13 +1,13 @@
 require 'rails_helper'
 
 RSpec.feature 'UserSignOuts', type: :feature do
-  let(:user) { build :user }
+  include Warden::Test::Helpers
+  let(:user) { create :user }
 
   scenario 'User sign_out the application' do
-    visit user_path(:user)
-
-    click_button find('Logout')
-
-    expect(page).to have_content('Sign In')
+    login_as(user)
+    logout(:user)
+    visit user_path(user)
+    expect(page).to have_content('sign in')
   end
 end

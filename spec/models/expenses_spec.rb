@@ -31,6 +31,10 @@ RSpec.describe Expense, type: :model do
   describe 'validations' do
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_length_of(:name) }
+    it { is_expected.to validate_numericality_of(:amount) }
+  end
+
+  describe 'associations' do
     it { should belong_to(:group) }
     it { should belong_to(:author) }
   end
