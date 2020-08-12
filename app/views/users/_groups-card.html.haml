@@ -3,7 +3,7 @@
     .card-body.px-4.py-2
       .d-flex.flex-row.justify-content-between.mt-2.mb-2
         %small.card-subtitle.text-muted.pb-0 Total items:
-        %small.card-subtitle.text-muted.pb-0= g.expenses.where(author: current_user).count
+        %small.card-subtitle.text-muted.pb-0= current_user.expenses.includes([:expenses]).where(group: g).count
       .d-flex.flex-row.justify-content-between.m-0.mb-2
         .div.d-flex.flex-row.align-items-center
           - if g.icon.url
