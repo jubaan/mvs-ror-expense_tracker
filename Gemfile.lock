@@ -398,6 +398,8 @@ GEM
     thread_safe (0.3.6)
     thread_safe (0.3.6-java)
     tilt (2.0.10)
+    traceroute (0.8.1)
+      rails (>= 3.0.0)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -472,6 +474,7 @@ DEPENDENCIES
   simplecov (~> 0.18.5)
   spring
   spring-watcher-listen (~> 2.0.0)
+  traceroute (~> 0.8.1)
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)

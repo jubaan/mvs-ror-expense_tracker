@@ -41,6 +41,7 @@ group :development, :test do
   gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
   gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
   gem 'rubocop', '~>0.81.0'
+  gem 'traceroute', '~> 0.8.1'
 end
 
 group :development do
