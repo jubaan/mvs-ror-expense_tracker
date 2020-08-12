@@ -27,6 +27,12 @@ module ApplicationHelper
     end
   end
 
+  def not_assigned_path
+    group = Group.find_by(name: 'Not Assigned')
+    group_path(group)
+
+  end
+
   def show_menu_toggler_if_user_login
     render 'layouts/menu_toggler' if user_signed_in?
   end

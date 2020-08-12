@@ -10,7 +10,7 @@ module GroupsHelper
   def show_group_selection(f)
     render =
       f.input :group_id,
-      collection: Group.all.to_set, selected: 1, include_blank: false
+      collection: Group.all.uniq, selected: 1, include_blank: false
   end
 
   def show_group_selection_update(f)

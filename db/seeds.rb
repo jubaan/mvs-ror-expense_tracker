@@ -1,18 +1,18 @@
-unless Group.all.find_by(name: 'Not Assigned')
+unless Group.find_by(name: 'Not Assigned')
   Group.create({ name: 'Not Assigned' })
 end
 
-julio = User.create(name: 'Julio', email: 'julio.ab@julio.com', password: 123_456)
+julio = User.create(name: 'Julio', email: 'julio@julio.com', password: 123_456)
 
 5.times do
   Group.create(name: Faker::Commerce.unique.department(max: 1), icon: 'icon')
 end
 
-10.times do
+100.times do
   Expense.create(
     name: Faker::Commerce.product_name,
     amount: Faker::Commerce.price,
-    author: User.first,
-    group: Group.all.to_set.sample
+    author: julio,
+    group: Group.all.uniq.sample
   )
 end
