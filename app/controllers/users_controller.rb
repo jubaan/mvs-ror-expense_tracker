@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    unless current_user == @user
+    unless current_user == @user # rubocop:disable Style/GuardClause
       flash[:notice] = 'Access restricted!'
       redirect_to user_path(current_user)
     end
