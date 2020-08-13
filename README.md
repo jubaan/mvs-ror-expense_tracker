@@ -32,6 +32,7 @@ passwor : 1234567
 - PostgresSQL
 - AWS S3
 - CarrierWave
+- Capybara
 
 ## Getting Started
 
@@ -43,9 +44,11 @@ machine.
 Ruby: 2.7.1
 Rails: 6.0.3.2
 Postgres: >=12.3
+AWS S3-Bucket
 
 After cloning and installing the prerequisites, follow this steps.
 
+- configure AWS S3. [Instructions]('https://medium.com/@youngjoonjung/configuring-carrierwave-with-aws-s3-on-your-rails-application-figaro-ea6178106102')
 - Run ``bundle install``
 - Run ``rails db:create db:migrate db:seed``
 - Run ``rails server``
@@ -72,4 +75,3 @@ Give a ⭐️ if you like this project!
 Contributions, issues and feature requests are welcome!
 
 Feel free to check the [issues page](https://github.com/jubaan/capstone/issues)
-page](https://www.github.com/fc-anjos/ror-social-scaffold/issues/).
