@@ -7,10 +7,6 @@ module ExpensesHelper
     current_user.expenses.ec_grouped_ordered_expenses_by_most_recent
   end
 
-  def expenses_by_most_recent_for_group(group)
-    expenses_by_most_recent.where(group: group)
-  end
-
   def formated_date(expense)
     y = expense.created_at.year
     m = expense.created_at.month

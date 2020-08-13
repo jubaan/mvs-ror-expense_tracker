@@ -20,7 +20,7 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to @group, notice: 'Group was successfully created.'
     else
-      render :new
+      render :new, alert: 'Something went wrong. Try again.'
     end
   end
 
@@ -29,13 +29,17 @@ class GroupsController < ApplicationController
       redirect_to cookies[:original_referrer],
                   notice: 'Expense was successfully updated.'
     else
-      render :edit
+      render :edit, alert: 'Something went wrong. Try again.'
     end
   end
 
   def destroy
     @group.destroy
-    redirect_to groups_url, notice: 'Group was successfully destroyed.'
+    if @user.destroy
+      redirect_to groups_url, notice: 'Group was successfully destroyed.'
+    else
+      render :edit, alert: 'Something went wrong. Try again.'
+    end
   end
 
   private

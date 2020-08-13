@@ -14,7 +14,8 @@ class ExpensesController < ApplicationController
     @expense = current_user.expenses.new(expense_params)
 
     if @expense.save
-      redirect_to expenses_path, flash: { notice: 'Expense was successfully created.' }
+      redirect_to expenses_path,
+                  flash: { notice: 'Expense was successfully created.' }
     else
       render :new, flash: { alert: 'Review your data' }
     end
@@ -22,15 +23,21 @@ class ExpensesController < ApplicationController
 
   def update
     if @expense.update(expense_params)
-      redirect_to cookies[:original_referrer], notice: 'Expense was successfully updated.'
+      redirect_to cookies[:original_referrer],
+                  notice: 'Expense was successfully updated.'
     else
-      render :edit
+      render :edit, alert: 'Something went wrong. Try again.'
     end
   end
 
   def destroy
     @expense.destroy
-    redirect_to request.referrer, notice: 'Expense was successfully destroyed.'
+    if @expense.destroy
+      redirect_to request.referrer,
+                  notice: 'Expense was successfully destroyed.'
+    else
+      render :edit, alert: 'Something went wrong. Try again.'
+    end
   end
 
   private

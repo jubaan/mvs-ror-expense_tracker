@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    unless current_user == @user # rubocop:disable Style/GuardClause
+    unless current_user == @user
       flash[:notice] = 'Access restricted!'
       redirect_to user_path(current_user)
     end
@@ -13,13 +13,17 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to @user, notice: 'User was successfully updated.'
     else
-      render :edit
+      render :edit, alert: 'Something went wrong. Try again.'
     end
   end
 
   def destroy
     @user.destroy
-    redirect_to users_url, notice: 'User was successfully destroyed.'
+    if @user.destroy
+      redirect_to users_url, notice: 'User was successfully destroyed.'
+    else
+      render :edit, alert: 'Something went wrong. Try again.'
+    end
   end
 
   private
