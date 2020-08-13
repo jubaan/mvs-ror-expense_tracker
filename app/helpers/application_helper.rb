@@ -28,7 +28,7 @@ module ApplicationHelper
   end
 
   def not_assigned_path
-    group = Group.find_by(name: 'Not Assigned')
+    group = Group.find_by_name('Not Assigned')
     group_path(group)
   end
 

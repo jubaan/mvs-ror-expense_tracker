@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'UserSignIns', type: :feature do
   let(:user) { create :user }
+  let!(:group) { create :group, name: 'Not Assigned' }
 
   scenario 'User visit sign in page, fills and submit the form to enter applications' do
     visit new_user_session_path
