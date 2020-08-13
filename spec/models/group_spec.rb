@@ -1,29 +1,23 @@
 require 'rails_helper'
 
 RSpec.describe Group, type: :model do
-  describe 'Model' do
-    let(:group) { build :group }
+  let(:group) { build :group }
 
-    it 'Group is valid without with full params given' do
-      expect(group).to be_valid
-    end
-
-    it 'Group is valid without icon' do
-      group.icon = nil
-      expect(group).to be_valid
-    end
-
-    it 'Group is invalid without name' do
-      expect(Group.new(name: nil)).to_not be_valid
-    end
+  it 'Group is valid without with full params given' do
+    expect(group).to be_valid
   end
 
-  describe 'validations' do
-    it { is_expected.to validate_presence_of(:name) }
-    it { is_expected.to validate_length_of(:name) }
+  it 'Group is valid without icon' do
+    group.icon = nil
+    expect(group).to be_valid
   end
 
-  describe 'associations' do
-    it { is_expected.to have_many(:expenses) }
+  it 'Group is invalid without name' do
+    expect(Group.new(name: nil)).to_not be_valid
   end
+
+  it { is_expected.to validate_presence_of(:name) }
+  it { is_expected.to validate_length_of(:name) }
+
+  it { is_expected.to have_many(:expenses) }
 end
