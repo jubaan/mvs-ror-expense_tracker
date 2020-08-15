@@ -5,18 +5,6 @@ module GroupsHelper
     current_user.groups.ordered_groups_by_most_recent.to_set
   end
 
-  def show_group_selection(f)
-    render =
-      f.input :group_id,
-              collection: Group.all.uniq, selected: 1, include_blank: false
-  end
-
-  def show_group_selection_update(f)
-    render =
-      f.input :group_id,
-              collection: Group.all, include_blank: false
-  end
-
   def show_group_icon(e)
     render = image_tag e.group.icon.url, class: 'icon-expense' if e.group.icon.url
   end

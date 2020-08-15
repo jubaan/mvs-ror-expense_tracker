@@ -4,6 +4,7 @@ class GroupsController < ApplicationController
   def index
     cookies[:original_referrer] = groups_path
     @groups = Group.includes(%i[expense user]).limit(10)
+    @collection = Group.all.uniq
   end
 
   def show
