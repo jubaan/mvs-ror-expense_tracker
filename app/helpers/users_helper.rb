@@ -23,7 +23,7 @@ module UsersHelper
   end
 
   def total_group_current_user(group)
-    current_user.expenses.where(group: group).map(&:amount).sum
+    current_user.expenses.where(group: group).sum(:amount)
   end
 
   # rubocop:disable Layout/LineLength

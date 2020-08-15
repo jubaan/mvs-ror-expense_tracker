@@ -3,6 +3,10 @@ module ExpensesHelper
     current_user.expenses.ordered_expenses_by_most_recent
   end
 
+  def expenses_by_most_recent_for_group(group)
+    current_user.expenses.where(group: group).ordered_expenses_by_most_recent
+  end
+
   def expenses_by_most_recent_for_index
     current_user.expenses.ec_grouped_ordered_expenses_by_most_recent
   end
