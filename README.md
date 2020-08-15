@@ -57,6 +57,8 @@ After cloning and installing the prerequisites, follow this steps.
 
 ### Run tests from root directory
 
+Run the following command from root directory to test case.
+
 ``rspec``
 
 ## Authors
