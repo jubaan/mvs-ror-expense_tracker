@@ -32,6 +32,12 @@ class ExpensesController < ApplicationController
 
   def destroy
     @expense.destroy
+    if @expense.destroy
+      redirect_to request.referrer,
+                  notice: 'Expense was successfully destroyed.'
+    else
+      render :edit, alert: 'Something went wrong. Try again.'
+    end
   end
 
   private

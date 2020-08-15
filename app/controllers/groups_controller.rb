@@ -36,11 +36,7 @@ class GroupsController < ApplicationController
 
   def destroy
     @group.destroy
-    if @user.destroy
       redirect_to groups_url, notice: 'Group was successfully destroyed.'
-    else
-      render :edit, alert: 'Something went wrong. Try again.'
-    end
   end
 
   private
