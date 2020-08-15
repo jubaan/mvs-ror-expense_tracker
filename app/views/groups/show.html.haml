@@ -2,7 +2,7 @@
 .row.h-100
   .col-xl.bg-white.p-3.d-flex.justify-content-between.shadow-sm
     %h3.m-0 Expended:
-    %h3.m-0= number_to_currency(total_group_current_user(@group))
+    %h3.m-0= number_to_currency(current_user.expenses.total_for_group(@group))
   .col-xl.px-3.pt-1.h-100
     .overflow-auto.h-75
       = render partial: 'groups/group-cards', local: { group: @group }

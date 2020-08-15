@@ -4,28 +4,6 @@ module UsersHelper
     name.length > 7 ? 'Welcome' : "Hi, #{name}!"
   end
 
-  def total_expenses_current_user_for_dashboard
-    sum = 0
-    current_user.expenses.ordered_expenses_by_most_recent.each { |e| sum += e.amount }
-    number_to_currency(sum)
-  end
-
-  def total_expenses_current_user_for_groups
-    sum = 0
-    current_user.expenses.g_ordered_expenses_by_most_recent.each { |e| sum += e.amount }
-    number_to_currency(sum)
-  end
-
-  def total_expenses_current_user
-    sum = 0
-    current_user.expenses.grouped_ordered_expenses_by_most_recent.each { |e| sum += e.amount }
-    number_to_currency(sum)
-  end
-
-  def total_group_current_user(group)
-    current_user.expenses.where(group: group).sum(:amount)
-  end
-
   # rubocop:disable Layout/LineLength
   # rubocop:disable Lint/UselessAssignment
   def show_user_profile_image

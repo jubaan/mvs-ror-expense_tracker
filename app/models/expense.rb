@@ -15,6 +15,9 @@ class Expense < ApplicationRecord
         -> { where('group_id <> 1').order(created_at: :desc) }
   scope :count_expenses, ->(group) { where(group: group).count }
 
+  scope :total, -> { sum(:amount) }
+  scope :total_for_group, ->(group) { where(group: group).sum(:amount) }
+
   validates :name, :amount, presence: true
   validates :group, presence: true
   validates :name, length: { in: 3..50 }
