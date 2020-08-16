@@ -68,6 +68,10 @@ Run the following command from root directory to test case.
 - Github: [@jubaan](https://github.com/jubaan)
 - Twitter: [@AnoverosJulio](https://twitter.com/AnoverosJulio)
 
+## Acknowledgment
+
+- [Gregoire Vella on Behance](https://www.behance.net/gregoirevella)
+
 ## Show your support
 
 Give a ⭐️ if you like this project!
