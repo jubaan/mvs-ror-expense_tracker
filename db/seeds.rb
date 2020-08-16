@@ -1,11 +1,13 @@
-unless Group.find_by(name: 'Not Assigned')
-  Group.create({ name: 'Not Assigned' })
+# unless Group.find_by(name: 'Not Assigned')
+#   Group.create({ name: 'Not Assigned' })
+# end
+
+unless User.find_by_name('User')
+  user = User.create(name: 'User', email: 'user@user.com', password: 123_456)
 end
 
-user = User.create(name: 'User', email: 'user@user.com', password: 123_456)
-
 5.times do
-  Group.create(name: Faker::Commerce.unique.department(max: 1), icon: 'icon')
+  Group.create(user: user, name: Faker::Commerce.unique.department(max: 1), icon: 'icon')
 end
 
 100.times do

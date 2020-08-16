@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update destroy]
 
   def show
-    @user = User.find(params[:id])
     unless current_user == @user # rubocop:disable Style/GuardClause
       flash[:notice] = 'Access restricted!'
       redirect_to user_path(current_user)
@@ -25,6 +24,8 @@ class UsersController < ApplicationController
       render :edit, alert: 'Something went wrong. Try again.'
     end
   end
+
+
 
   private
 
