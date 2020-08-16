@@ -6,13 +6,13 @@ class Expense < ApplicationRecord
         -> { includes(%i[group author]).order(created_at: :desc) }
   scope :g_ordered_expenses_by_most_recent, -> { order(created_at: :desc) }
   scope :ec_grouped_ordered_expenses_by_most_recent,
-        lambda {
-          where('group_id <> 1').includes(%i[group author]).order(
+        lambda { |id|
+          where.not(group_id: id).includes(%i[group author]).order(
             created_at: :desc
           )
         }
   scope :grouped_ordered_expenses_by_most_recent,
-        -> { where('group_id <> 1').order(created_at: :desc) }
+        ->(id) { where.not(group_id: id).order(created_at: :desc) }
   scope :count_expenses, ->(group) { where(group: group).count }
 
   scope :total, -> { sum(:amount) }

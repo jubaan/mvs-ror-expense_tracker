@@ -4,11 +4,13 @@ module ExpensesHelper
   end
 
   def expenses_by_most_recent_for_group(group)
+    id = current_user.groups.not_assigned_group.id
     current_user.expenses.where(group: group).ordered_expenses_by_most_recent
   end
 
   def expenses_by_most_recent_for_index
-    current_user.expenses.ec_grouped_ordered_expenses_by_most_recent
+    id = current_user.groups.not_assigned_group.id
+    current_user.expenses.ec_grouped_ordered_expenses_by_most_recent(id)
   end
 
   def formated_date(expense)
