@@ -19,3 +19,11 @@
         = link_to_unless_current 'All groups', groups_path, class: 'nav-link'
       %li.nav-item
         = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link'
+:javascript
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "100%";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
