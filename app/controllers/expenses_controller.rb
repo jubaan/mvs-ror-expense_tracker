@@ -14,7 +14,7 @@ class ExpensesController < ApplicationController
     @expense = current_user.expenses.new(expense_params)
 
     if @expense.save
-      redirect_to expenses_path,
+      redirect_to user_path(current_user),
                   flash: { notice: 'Expense was successfully created.' }
     else
       render :new, flash: { alert: 'Review your data' }
