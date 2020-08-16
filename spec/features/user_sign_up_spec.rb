@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.feature 'UserSignUps', type: :feature do
   let(:new_user) { build :user }
-  let!(:group) { create :group, name: 'Not Assigned' }
 
   scenario 'User visit sign up page, fills and submit the form to enter applications' do
     visit new_user_registration_path

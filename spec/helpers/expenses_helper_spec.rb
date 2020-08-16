@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe ExpensesHelper, type: :helper do
   describe '#expenses_by_most_recent' do
-    let(:current_user) { create :user }
-    let!(:entretainment) { create :group, name: 'entretainment' }
-    let!(:food) { create :group, name: 'food' }
+    let!(:current_user) { create :user }
+    let!(:entretainment) { create :group, name: 'entretainment', user: current_user }
+    let!(:food) { create :group, name: 'food', user: current_user }
     let!(:cinema) do
       create :expense,
              name: 'cinema',
@@ -24,8 +24,8 @@ RSpec.describe ExpensesHelper, type: :helper do
   end
 
   describe '#formated_date' do
-    let(:current_user) { create :user }
-    let!(:entretainment) { create :group, name: 'entretainment' }
+    let!(:current_user) { create :user }
+    let!(:entretainment) { create :group, name: 'entretainment', user: current_user }
     let!(:cinema) do
       create :expense,
              name: 'cinema',

@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Group, type: :model do
-  let(:group) { build :group }
+  let(:user) { create :user }
+  let(:group) { build :group, user: user }
 
   it 'Group is valid without with full params given' do
     expect(group).to be_valid

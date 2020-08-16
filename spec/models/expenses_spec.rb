@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Expense, type: :model do
-  let(:user) { create :user }
-  let(:group) { create :group }
-  let(:expense) do
+  let!(:user) { create :user }
+  let!(:group) { create :group, user: user }
+  let!(:expense) do
     build :expense, author: user, group: group, created_at: '2020-03-01'
   end
 

@@ -17,13 +17,13 @@ RSpec.describe UsersHelper, type: :helper do
 
   describe '#total_expenses_current_user_for_dashboard' do
     let(:current_user) { create :user }
-    let!(:entretainment) { create :group, name: 'entretainment' }
-    let!(:food) { create :group, name: 'food' }
+    let!(:entretainment) { create :group, name: 'entretainment', user: current_user }
+    let!(:food) { create :group, name: 'food', user: current_user }
     let!(:cinema) { create :expense, name: 'cinema', amount: 5.50, group: entretainment, author: current_user }
     let!(:tacos) { create :expense, name: 'tacos', amount: 4.50, group: food, author: current_user }
 
     it 'sums all expenses amount' do
-      expect(total_expenses_current_user_for_dashboard).to eq('$10.00')
+      expect(current_user.expenses.total).to eq(10.00)
     end
   end
 end
