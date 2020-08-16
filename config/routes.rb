@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # devise_for :users
 
   resources :users, only: %i[show edit update delete]
-  resources :expenses, except: %i[show]
+  resources :expenses
   resources :groups
 
   root 'pages#welcome'
