@@ -8,6 +8,10 @@ module GroupsHelper
   def show_group_icon(e)
     render = image_tag e.group.icon.url, class: 'icon-expense' if e.group.icon.url
   end
+
+  def show_group_icon_(g)
+    render = image_tag g.icon.url, class: 'icon-expense' if g.icon.url
+  end
 end
 # rubocop:enable Naming/MethodParameterName
 

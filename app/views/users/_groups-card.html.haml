@@ -6,8 +6,7 @@
         %small.card-subtitle.text-muted.pb-0= current_user.expenses.count_expenses(g)
       .d-flex.flex-row.justify-content-between.m-0.mb-2
         .div.d-flex.flex-row.align-items-center
-          - if g.icon.url
-            = image_tag g.icon.url, class: 'icon-expense'
+          = show_group_icon_(g)
           %h5.card-title.m-0= link_to g.name.capitalize, group_path(g)
         %h5.card-title.m-0= number_to_currency(current_user.expenses.total_for_group(g))
       %div.w-100.d-flex.flex-row.justify-content-between.align-items-center

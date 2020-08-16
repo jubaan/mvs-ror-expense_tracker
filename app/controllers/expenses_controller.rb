@@ -1,5 +1,5 @@
 class ExpensesController < ApplicationController
-  before_action :set_expense, only: %i[show edit update destroy]
+  before_action :set_expense, only: %i[edit update destroy]
 
   def index
     cookies[:original_referrer] = expenses_path
@@ -21,9 +21,11 @@ class ExpensesController < ApplicationController
     end
   end
 
+  def edit; end
+
   def update
     if @expense.update(expense_params)
-      redirect_to cookies[:original_referrer],
+      redirect_to expenses_path,
                   notice: 'Expense was successfully updated.'
     else
       render :edit, alert: 'Something went wrong. Try again.'

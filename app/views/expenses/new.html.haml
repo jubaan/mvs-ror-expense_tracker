@@ -6,6 +6,6 @@
       .form-inputs
         = f.input :name, required: true
         = f.input :amount, as: :float, required: true
-        = f.input :group_id, as: :select, collection: current_user.groups.collection, selected: '1', include_blank: false
+        = f.input :group_id, as: :select, collection: current_user.groups.collection, selected: current_user.groups.not_assigned_group.id, include_blank: false
       .form-actions
         = f.button :submit, "Add expense", class: 'btn btn-primary btn-lg w-100'
