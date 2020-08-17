@@ -10,7 +10,7 @@ class User < ApplicationRecord
          :validatable
 
   has_many :expenses, foreign_key: 'author_id', dependent: :destroy
-  has_many :groups
+  has_many :groups, dependent: :destroy
 
   validates :name, :email, presence: true, length: { in: 1..50 }
   validates :password,
