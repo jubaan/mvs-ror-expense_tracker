@@ -10,7 +10,6 @@ module ExpensesHelper
   def total_withouth_not_assigned
     id = current_user.groups.not_assigned_group.id
     current_user.expenses.total_no_ungroup(id)
-
   end
 
   def expenses_by_most_recent_for_index
