@@ -18,11 +18,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    if @user.destroy
-      redirect_to users_url, notice: 'User was successfully destroyed.'
-    else
-      render :edit, alert: 'Something went wrong. Try again.'
-    end
+    redirect_to users_url, notice: 'User was successfully destroyed.'
   end
 
   private
