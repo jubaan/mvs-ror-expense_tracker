@@ -17,11 +17,13 @@ passwor : 1234567
 ``
 
 ### Previews
-![image01](https://user-images.githubusercontent.com/25774518/89700315-d8d8e600-d8f2-11ea-83f0-392af73f5d93.jpg)
-![image02](https://user-images.githubusercontent.com/25774518/89700313-d8404f80-d8f2-11ea-8f98-f017d833eaf7.jpg)
-![image03](https://user-images.githubusercontent.com/25774518/89700316-d8d8e600-d8f2-11ea-9f0b-31a8abd5f167.jpg)
-![image04](https://user-images.githubusercontent.com/25774518/89700318-d9717c80-d8f2-11ea-9ed6-3e8bbbadbc07.jpg)
-
+![01-welcome](https://user-images.githubusercontent.com/25774518/90350929-3f04ed80-e004-11ea-8faf-a3b66f32aedf.png)
+![02-sign_in](https://user-images.githubusercontent.com/25774518/90350931-40361a80-e004-11ea-8491-be15de50960b.png)
+![03-sign_up](https://user-images.githubusercontent.com/25774518/90350932-40361a80-e004-11ea-8503-1720c2ca5178.png)
+![04-dashboard](https://user-images.githubusercontent.com/25774518/90350933-40ceb100-e004-11ea-925e-c61a7888b02b.png)
+![05-add_new_expense](https://user-images.githubusercontent.com/25774518/90350934-40ceb100-e004-11ea-9215-f09415e2aeca.png)
+![06-slide_menu](https://user-images.githubusercontent.com/25774518/90350935-40ceb100-e004-11ea-887b-1041e779a31c.png)
+![07-categories](https://user-images.githubusercontent.com/25774518/90350937-41674780-e004-11ea-8412-3bbf69e97864.png)
 ## Built With
 - Ruby v2.7.1
 - Ruby on Rails v6.0.3.2
