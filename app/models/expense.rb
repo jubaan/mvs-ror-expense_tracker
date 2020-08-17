@@ -16,6 +16,7 @@ class Expense < ApplicationRecord
   scope :count_expenses, ->(group) { where(group: group).count }
 
   scope :total, -> { sum(:amount) }
+  scope :total_no_ungroup, ->(id) { where.not(group_id: id).sum(:amount) }
   scope :total_for_group, ->(group) { where(group: group).sum(:amount) }
 
   validates :name, :amount, presence: true
