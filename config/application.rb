@@ -1,35 +1,37 @@
 require_relative 'boot'
 
-require "rails"
-# Pick the frameworks you want:
-require "active_model/railtie"
-require "active_job/railtie"
-require "active_record/railtie"
-require "active_storage/engine"
-require "action_controller/railtie"
-require "action_mailer/railtie"
-require "action_mailbox/engine"
-require "action_text/engine"
-require "action_view/railtie"
-require "action_cable/engine"
-require "sprockets/railtie"
-# require "rails/test_unit/railtie"
+require 'rails'
+require 'active_model/railtie'
+require 'active_job/railtie'
+require 'active_record/railtie'
+require 'active_storage/engine'
+require 'action_controller/railtie'
+require 'action_mailer/railtie'
+require 'action_mailbox/engine'
+require 'action_text/engine'
+require 'action_view/railtie'
+require 'action_cable/engine'
+require 'sprockets/railtie'
 
-# Require the gems listed in Gemfile, including any gems
-# you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
 module Capstone
   class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
-    # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration can go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded after loading
-    # the framework and any gems in your application.
-
-    # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+
+    config.assets.initialize_on_precomplie = false
+  end
+
+  JitPreloader.globally_enabled = true
+
+  ActiveSupport::Notifications.subscribe('n_plus_one_query') do |_event, data|
+    message =
+      "N+1 Query detected: #{data[:association]} on #{data[:source].class}"
+    backtrace = caller.select { |r| r.starts_with?(Rails.root.to_s) }
+    Rails.logger.debug("\n\n#{message}\n#{backtrace.join("\n")}\n".red)
   end
 end

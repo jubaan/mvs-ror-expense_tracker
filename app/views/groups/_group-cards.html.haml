@@ -1,0 +1,22 @@
+- expenses_by_most_recent_for_group(@group).each do |e|
+  .card.mb-2.shadow-sm
+    .card-body.px-3.py-2
+      .d-flex.flex-row.justify-content-between.mt-2.mb-2
+        %small.card-subtitle.text-primary.pb-0
+          = show_group_icon(e)
+          = link_to e.group.name.upcase, group_path(e.group)
+        %small.card-subtitle.text-muted.pb-0= e.author.name.capitalize
+      .d-flex.flex-row.justify-content-between.m-0.mb-2
+        %h5.card-title.m-0= e.name
+        %h5.card-title.m-0= number_to_currency(e.amount)
+      %div.w-100.d-flex.flex-row.justify-content-between.align-items-center
+        %small.card-subtitle.text-muted= formated_date(e)
+        %div
+          %small.card-subtitle.mr-2
+            = link_to edit_expense_path(e), class: 'text-muted' do
+              Edit
+              %i.fas.fa-edit
+          %small.card-subtitle
+            = link_to expense_path(e), method: :delete, class: 'text-danger' do
+              Delete
+              %i.fas.fa-trash-alt

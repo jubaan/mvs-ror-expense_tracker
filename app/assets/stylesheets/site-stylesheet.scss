@@ -1,0 +1,15 @@
+body {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+}
+
+.bg-color {
+  background: #eaedee;
+  background: linear-gradient(to top, #fdfbfb, #eaedee);
+}
+
+.font-bold {
+  font-family: 'lato', sans-serif;
+  font-weight: 700;
+}

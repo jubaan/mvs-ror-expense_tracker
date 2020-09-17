@@ -1,0 +1,25 @@
+#mySidenav.sidenav.bg-primary
+  .text-center.pl-3.mb-3= show_user_profile_image
+  %h3.text-center.text-white.text-uppercase.font-weight-bold= current_user.name
+  %ul.navbar-nav.p-3
+    %li.nav-item
+      = link_to 'Transactions', user_path(current_user), class: 'nav-link'
+    %hr.m-0
+    %li.nav-item
+      = link_to 'Profile', edit_user_path(current_user), class: 'nav-link'
+    %hr.m-0
+    %li.nav-item
+      = link_to 'All my transactions', expenses_path, class: 'nav-link'
+    %hr.m-0
+    %li.nav-item
+      = link_to 'All my external transactions', not_assigned_path, class: 'nav-link'
+    %hr.m-0
+    %li.nav-item
+      = link_to 'All groups', groups_path, class: 'nav-link'
+    %hr.m-0
+    %li.nav-item
+      = link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link'
+  %a.closebtn{:href => "javascript:void(0)", :onclick => "closeNav()"} ×
+%span{:onclick => "openNav()", :style => "color:white; font-size:30px;cursor:pointer"} &#9776;
+-# %button.navbar-toggler{"aria-controls" => "navbarNav", "aria-expanded" => "true", "aria-label" => "Toggle navigation", "data-target" => "#navbarNav", "data-toggle" => "collapse", :type => "button"}
+  %span.navbar-toggler-icon
